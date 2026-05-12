@@ -1,0 +1,8 @@
+{
+  "name": "@changesets/test-fixture-dprint",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "dprint": "^0.54.0"
+  }
+}

@@ -11,6 +11,9 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      # Save dprint plugins cache to node_nodules in CI for simpler caching
+      DPRINT_CACHE_DIR: ${{ github.workspace }}/node_modules/.dprint-cache
     steps:
       - name: Check out repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -23,6 +26,11 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@667a34cdef165d8d2b2e98dde39547c9daac7282 # v2.0.4
+        with:
+          deno-version: 2.x
 
       - name: Install dependencies
         run: pnpm install
