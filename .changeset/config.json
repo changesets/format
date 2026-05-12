@@ -3,5 +3,6 @@
   "changelog": ["@changesets/changelog-github", { "repo": "changesets/format" }],
   "baseBranch": "main",
   "commit": false,
-  "access": "public"
+  "access": "public",
+  "ignore": ["@changesets/test-*"]
 }

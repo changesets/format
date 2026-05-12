@@ -1,5 +1,6 @@
 packages:
   - "tests/fixtures/*"
+  - "." # This is needed for changesets to detect the root package
 
 allowBuilds:
   dprint: true
