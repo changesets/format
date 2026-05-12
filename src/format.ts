@@ -1,7 +1,7 @@
-import { detect as detectPackageManager, type Agent } from "package-manager-detector";
-import { formatters, type FormatterFormatContext, type FormatterName } from "./formatters.ts";
-import { detect } from "./detect.ts";
 import path from "node:path";
+import { detect as detectPackageManager, type Agent } from "package-manager-detector";
+import { detect } from "./detect.ts";
+import { formatters, type FormatterFormatContext, type FormatterName } from "./formatters.ts";
 
 export interface FormatOptions {
   /**
