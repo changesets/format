@@ -1,0 +1,23 @@
+name: Setup CI
+
+inputs:
+  node-version:
+    description: "Node.js version"
+    required: false
+    default: 22
+
+runs:
+  using: composite
+  steps:
+    - name: Set up pnpm
+      uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6.0.6
+
+    - name: Setup Node.js ${{ inputs.node-version }}
+      uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
