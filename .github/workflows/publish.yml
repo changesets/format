@@ -17,6 +17,7 @@ jobs:
     outputs:
       hasChangesets: ${{ steps.changesets.outputs.hasChangesets }}
     permissions:
+      contents: write # to create version commits (changesets/action)
       pull-requests: write # to create pull request (changesets/action)
     steps:
       - name: Check out repo
