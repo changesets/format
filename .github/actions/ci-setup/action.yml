@@ -3,7 +3,7 @@ description: Setup CI
 
 inputs:
   node-version:
-    description: "Node.js version"
+    description: Node.js version
     required: false
     default: 24
 
