@@ -37,12 +37,10 @@ const cases: { formatter: FormatterName; expectedCommand: string[] }[] = [
   { formatter: "dprint", expectedCommand: ["npx", "dprint", "fmt", "file.ts"] },
 ];
 
-for (const c of cases) {
-  test(`executes the correct command for ${c.formatter}`, async () => {
-    await using fixture = await createFixture({});
-    const result = await format(["file.ts"], { cwd: fixture.path, formatter: c.formatter });
-    expect(result).toBe(true);
-    const [command, ...args] = c.expectedCommand;
-    expect(mocks.spawn).toHaveBeenCalledWith(command, args, { cwd: fixture.path });
-  });
-}
+test.for(cases)("executes the correct command for $formatter", async (c) => {
+  await using fixture = await createFixture();
+  const result = await format(["file.ts"], { cwd: fixture.path, formatter: c.formatter });
+  expect(result).toBe(true);
+  const [command, ...args] = c.expectedCommand;
+  expect(mocks.spawn).toHaveBeenCalledWith(command, args, { cwd: fixture.path });
+});

@@ -1,3 +1,9 @@
+packages:
+  - "tests/fixtures/*"
+
+allowBuilds:
+  dprint: true
+
 dedupePeers: true
 
 overrides:

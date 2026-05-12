@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`detect and format biome fixture 1`] = `
+"let x = 1;
+"
+`;
+
+exports[`detect and format deno fixture 1`] = `
+"let x = 1;
+"
+`;
+
+exports[`detect and format dprint fixture 1`] = `
+"let x = 1;
+"
+`;
+
+exports[`detect and format oxfmt fixture 1`] = `
+"let x = 1;
+"
+`;
+
+exports[`detect and format prettier fixture 1`] = `
+"let x = 1;
+"
+`;
