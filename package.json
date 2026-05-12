@@ -1,6 +1,6 @@
 {
   "name": "@changesets/format",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Detect and format files",
   "license": "MIT",
   "author": "Changesets",
@@ -15,7 +15,8 @@
     "test": "vitest",
     "format": "oxfmt",
     "lint": "oxfmt --check",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "release": "changeset publish"
   },
   "dependencies": {
     "package-manager-detector": "^1.6.0"
@@ -29,6 +30,9 @@
     "tsdown": "^0.22.0",
     "typescript": "~6.0.3",
     "vitest": "^4.1.5"
+  },
+  "engines": {
+    "node": "^22.11 || ^24 || >=26"
   },
   "packageManager": "pnpm@11.1.0"
 }
