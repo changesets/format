@@ -15,7 +15,8 @@
     "test": "vitest",
     "format": "oxfmt",
     "lint": "oxfmt --check",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "release": "changeset publish"
   },
   "dependencies": {
     "package-manager-detector": "^1.6.0"
