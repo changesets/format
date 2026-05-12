@@ -2,8 +2,15 @@
   "name": "@changesets/format",
   "version": "0.1.0",
   "description": "Detect and format files",
+  "bugs": {
+    "url": "https://github.com/changesets/format/issues"
+  },
   "license": "MIT",
   "author": "Changesets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changesets/format.git"
+  },
   "files": [
     "dist"
   ],
