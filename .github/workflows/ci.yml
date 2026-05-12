@@ -17,6 +17,9 @@ jobs:
       # Save dprint plugins cache to node_nodules in CI for simpler caching
       DPRINT_CACHE_DIR: ${{ github.workspace }}/node_modules/.dprint-cache
     steps:
+      - name: Check out repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
       - uses: ./.github/actions/ci-setup
 
       # Deno is needed for tests only

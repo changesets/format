@@ -21,6 +21,9 @@ jobs:
       issues: write # to post issue comments (changesets/action)
       pull-requests: write # to create pull request (changesets/action)
     steps:
+      - name: Check out repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
       - uses: ./.github/actions/ci-setup
 
       - name: Create or update release pull request
@@ -38,6 +41,9 @@ jobs:
       contents: write # to create release (changesets/action)
       id-token: write # to use OpenID Connect token for trusted publishing (changesets/action)
     steps:
+      - name: Check out repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
       - uses: ./.github/actions/ci-setup
 
       - name: Build
