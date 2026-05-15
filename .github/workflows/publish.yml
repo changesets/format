@@ -5,7 +5,10 @@ on:
     branches:
       - main
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+  queue: max
 
 permissions: {}
 
@@ -24,6 +27,8 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: ./.github/actions/ci-setup
+        with:
+          skip-cache: true # avoid cache poisoning attacks
 
       - name: Create or update release pull request
         id: changesets
@@ -44,6 +49,8 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: ./.github/actions/ci-setup
+        with:
+          skip-cache: true # avoid cache poisoning attacks
 
       - name: Build
         run: pnpm build
