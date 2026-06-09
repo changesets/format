@@ -31,15 +31,15 @@
   "devDependencies": {
     "@changesets/changelog-github": "^1.0.0-next.3",
     "@changesets/cli": "^3.0.0-next.3",
-    "@types/node": "^25.6.2",
-    "fs-fixture": "^2.13.0",
-    "oxfmt": "^0.48.0",
-    "tsdown": "^0.22.0",
+    "@types/node": "^25.9.1",
+    "fs-fixture": "^2.14.0",
+    "oxfmt": "^0.53.0",
+    "tsdown": "^0.22.1",
     "typescript": "~6.0.3",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.8"
   },
   "engines": {
     "node": "^22.11 || ^24 || >=26"
   },
-  "packageManager": "pnpm@11.1.0"
+  "packageManager": "pnpm@11.1.1+sha512.d1fdf5f73c617b64fa1a56a81c3c8dfe0e966e33a6010aa256b517ae77be21d93e05affc0de1a83b0e4f29d569f68b446ae8f068cd7247c0bb3df0fb4d7bdf9a"
 }
