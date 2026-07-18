@@ -39,9 +39,12 @@ jobs:
           advanced-security: false
 
   test:
-    name: Test
-    runs-on: ubuntu-latest
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     env:
       # Save dprint plugins cache to node_nodules in CI for simpler caching
       DPRINT_CACHE_DIR: ${{ github.workspace }}/node_modules/.dprint-cache
