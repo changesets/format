@@ -15,6 +15,9 @@ importers:
       package-manager-detector:
         specifier: ^1.6.0
         version: 1.6.0
+      tinyexec:
+        specifier: ^1.2.4
+        version: 1.2.4
     devDependencies:
       '@changesets/changelog-github':
         specifier: ^1.0.0-next.3
@@ -933,10 +936,6 @@ packages:
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
-  tinyexec@1.1.2:
-    resolution: {integrity: sha512-dAqSqE/RabpBKI8+h26GfLq6Vb3JVXs30XYQjdMjaj/c2tS8IYYMbIzP599KtRj7c57/wYApb3QjgRgXmrCukA==}
-    engines: {node: '>=18'}
-
   tinyexec@1.2.4:
     resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
     engines: {node: '>=18'}
@@ -1207,7 +1206,7 @@ snapshots:
       package-manager-detector: 1.6.0
       picocolors: 1.1.1
       semver: 7.7.4
-      tinyexec: 1.1.2
+      tinyexec: 1.2.4
     transitivePeerDependencies:
       - '@types/node'
 
@@ -1250,7 +1249,7 @@ snapshots:
       '@changesets/types': 7.0.0-next.3
       '@manypkg/get-packages': 3.1.0
       picomatch: 4.0.4
-      tinyexec: 1.1.2
+      tinyexec: 1.2.4
 
   '@changesets/logger@1.0.0-next.2':
     dependencies:
@@ -1812,8 +1811,6 @@ snapshots:
       ansi-regex: 5.0.1
 
   tinybench@2.9.0: {}
-
-  tinyexec@1.1.2: {}
 
   tinyexec@1.2.4: {}
 

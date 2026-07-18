@@ -3,28 +3,10 @@ import { expect, test, vi } from "vitest";
 import { format, type FormatterName } from "../src/index.ts";
 
 const mocks = vi.hoisted(() => ({
-  spawn: vi.fn().mockReturnValue({
-    // mock the bare-minimum based on how `src/utils.ts` uses `spawn`
-    on: (eventName: string, listener: Function) => {
-      if (eventName === "exit") {
-        listener(0); // simulate successful exit
-      }
-    },
-    stderr: { on: () => {} },
-  }),
+  exec: vi.fn().mockResolvedValue({ exitCode: 0, stderr: "", stdout: "" }),
 }));
 
-vi.mock(import("node:child_process"), async (importOriginal) => {
-  const mod = await importOriginal();
-  return {
-    ...mod,
-    spawn: mocks.spawn,
-    default: {
-      ...mod.default,
-      spawn: mocks.spawn,
-    },
-  };
-});
+vi.mock(import("tinyexec"), () => ({ exec: mocks.exec }));
 
 const cases: { formatter: FormatterName; expectedCommand: string[] }[] = [
   { formatter: "prettier", expectedCommand: ["npx", "prettier", "--write", "file.ts"] },
@@ -42,5 +24,8 @@ test.for(cases)("executes the correct command for $formatter", async (c) => {
   const result = await format(["file.ts"], { cwd: fixture.path, formatter: c.formatter });
   expect(result).toBe(true);
   const [command, ...args] = c.expectedCommand;
-  expect(mocks.spawn).toHaveBeenCalledWith(command, args, { cwd: fixture.path });
+  expect(mocks.exec).toHaveBeenCalledWith(command, args, {
+    nodeOptions: { cwd: fixture.path },
+    throwOnError: true,
+  });
 });
