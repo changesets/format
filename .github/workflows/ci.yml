@@ -38,8 +38,8 @@ jobs:
           annotations: true
           advanced-security: false
 
-  test:
-    name: Test
+  checks:
+    name: Build, lint, and typecheck
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
@@ -53,12 +53,6 @@ jobs:
 
       - uses: ./.github/actions/ci-setup
 
-      # Deno is needed for tests only
-      - name: Set up Deno
-        uses: denoland/setup-deno@667a34cdef165d8d2b2e98dde39547c9daac7282 # v2.0.4
-        with:
-          deno-version: 2.x
-
       - name: Build
         run: pnpm build
 
@@ -68,6 +62,27 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
+  test:
+    name: "Test on ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+      fail-fast: false
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - uses: ./.github/actions/ci-setup
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@667a34cdef165d8d2b2e98dde39547c9daac7282 # v2.0.4
+        with:
+          deno-version: 2.x
+
       - name: Test
         run: pnpm test
 
@@ -75,7 +90,7 @@ jobs:
     name: CI OK
     runs-on: ubuntu-latest
     if: always()
-    needs: [lint-workflows, test]
+    needs: [lint-workflows, checks, test]
     steps:
       - name: Exit with error if some jobs are not successful
         run: exit 1

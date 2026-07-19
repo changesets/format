@@ -1,6 +1,6 @@
-import cp from "node:child_process";
 import path from "node:path";
 import { resolveCommand, type Agent } from "package-manager-detector";
+import { exec } from "tinyexec";
 
 /**
  * Traverse upwards from `startDir` to `stopDir` (inclusive), calling `cb` in each directory. If
@@ -37,24 +37,8 @@ export async function packageManagerExecute(
 }
 
 export async function spawnProcess(command: string, args: string[], cwd: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const child = cp.spawn(command, args, { cwd });
-
-    let stderr = "";
-    child.stderr.on("data", (data) => {
-      stderr += data.toString();
-    });
-
-    child.on("exit", (code) => {
-      if (code === 0) {
-        resolve();
-      } else {
-        reject(new Error(`${command} exited with code ${code}. Stderr:\n${stderr}`));
-      }
-    });
-
-    child.on("error", (err) => {
-      reject(err);
-    });
+  await exec(command, args, {
+    nodeOptions: { cwd },
+    throwOnError: true,
   });
 }
