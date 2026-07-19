@@ -1,6 +1,6 @@
 {
   "name": "@changesets/format",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detect and format files",
   "bugs": {
     "url": "https://github.com/changesets/format/issues"
