@@ -1,6 +1,6 @@
 {
   "name": "@changesets/format",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detect and format files",
   "bugs": {
     "url": "https://github.com/changesets/format/issues"
@@ -26,7 +26,8 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "package-manager-detector": "^1.7.0"
+    "package-manager-detector": "^1.7.0",
+    "tinyexec": "^1.2.4"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^1.0.0-next.6",
