@@ -4,7 +4,5 @@
   "baseBranch": "main",
   "commit": false,
   "access": "public",
-  "privatePackages": {
-    "version": false
-  }
+  "privatePackages": false
 }
