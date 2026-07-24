@@ -3,6 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "oxfmt": "^0.53.0"
+    "oxfmt": "^0.59.0"
   }
 }

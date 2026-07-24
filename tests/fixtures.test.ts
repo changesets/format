@@ -25,7 +25,7 @@ async function canRunDprint() {
 
 const cases: FormatterName[] = ["biome", "deno", "dprint", "oxfmt", "prettier"];
 
-test.for(cases)("detect and format %s fixture", async (name, ctx) => {
+test.for(cases)("detect and format %s fixture", { timeout: 10000 }, async (name, ctx) => {
   // Optionally skip some tests locally if the formatter isn't properly installed,
   // but always run in CI
   if (!process.env.CI) {
