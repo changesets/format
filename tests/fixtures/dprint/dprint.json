@@ -1,5 +1,5 @@
 {
   "typescript": {},
   "excludes": ["**/node_modules"],
-  "plugins": ["npm:@dprint/typescript@0.96.1"]
+  "plugins": ["npm:@dprint/typescript"]
 }

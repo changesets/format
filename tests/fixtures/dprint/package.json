@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "@dprint/typescript": "^0.96.1",
     "dprint": "^0.55.2"
   }
 }

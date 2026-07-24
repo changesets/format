@@ -49,6 +49,9 @@ importers:
 
   tests/fixtures/dprint:
     devDependencies:
+      '@dprint/typescript':
+        specifier: ^0.96.1
+        version: 0.96.1
       dprint:
         specifier: ^0.55.2
         version: 0.55.2
@@ -274,6 +277,9 @@ packages:
     cpu: [x64]
     os: [linux]
     libc: [musl]
+
+  '@dprint/typescript@0.96.1':
+    resolution: {integrity: sha512-mz/nINSFQh1R5i2Qy90SWOCCK4SgNGRkNhCZba7LYmUkE4Zi8/45p8l8pqc9yN1fb4XY5Muhrzdh5Q3jFsYimw==}
 
   '@dprint/win32-arm64@0.55.2':
     resolution: {integrity: sha512-dxDdxU4a6wQ4K0omdAxW7o0mUdOI03z0/Ah3N6O9Ja7wAMQI5sbfzq7DOJ739UVXtHSB4zBTtYuk1MrBOIyVQQ==}
@@ -1604,6 +1610,8 @@ snapshots:
 
   '@dprint/linux-x64-musl@0.55.2':
     optional: true
+
+  '@dprint/typescript@0.96.1': {}
 
   '@dprint/win32-arm64@0.55.2':
     optional: true
