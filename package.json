@@ -26,20 +26,20 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "package-manager-detector": "^1.6.0"
+    "package-manager-detector": "^1.7.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^1.0.0-next.3",
-    "@changesets/cli": "^3.0.0-next.3",
-    "@types/node": "^25.9.1",
+    "@changesets/changelog-github": "^1.0.0-next.6",
+    "@changesets/cli": "^3.0.0-next.8",
+    "@types/node": "^26.1.1",
     "fs-fixture": "^2.14.0",
-    "oxfmt": "^0.56.0",
-    "tsdown": "^0.22.3",
-    "typescript": "~6.0.3",
-    "vitest": "^4.1.9"
+    "oxfmt": "^0.59.0",
+    "tsdown": "^0.22.9",
+    "typescript": "~7.0.2",
+    "vitest": "^4.1.10"
   },
   "engines": {
     "node": "^22.11 || ^24 || >=26"
   },
-  "packageManager": "pnpm@11.1.1+sha512.d1fdf5f73c617b64fa1a56a81c3c8dfe0e966e33a6010aa256b517ae77be21d93e05affc0de1a83b0e4f29d569f68b446ae8f068cd7247c0bb3df0fb4d7bdf9a"
+  "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72"
 }

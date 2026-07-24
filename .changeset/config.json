@@ -4,5 +4,7 @@
   "baseBranch": "main",
   "commit": false,
   "access": "public",
-  "ignore": ["@changesets/test-*"]
+  "privatePackages": {
+    "version": false
+  }
 }
