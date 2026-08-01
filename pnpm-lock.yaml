@@ -17,8 +17,8 @@ importers:
         version: 1.2.4
     devDependencies:
       '@changesets/changelog-github':
-        specifier: ^1.0.0-next.6
-        version: 1.0.0-next.6
+        specifier: ^1.0.0-next.8
+        version: 1.0.0-next.8
       '@changesets/cli':
         specifier: ^3.0.0-next.8
         version: 3.0.0-next.8
@@ -139,8 +139,8 @@ packages:
     resolution: {integrity: sha512-z+uAi+BhOUJSBlQj2o5n3oFwhCkHQBk+P1JrFFRvA5fv6pDRAZpugQYbXR7dIQZ5Dn4ndG9cidIKb2o/lGs2wQ==}
     engines: {node: ^22.11 || ^24 || >=26}
 
-  '@changesets/changelog-github@1.0.0-next.6':
-    resolution: {integrity: sha512-0ShCWgNt50xP0mryAYT8wtSkMUinG8uhxXgCgwHZ4UvJnR2f4ns8OsGAxYu8FIds7kHFdLOz7qX4YQ6AX4tVUA==}
+  '@changesets/changelog-github@1.0.0-next.8':
+    resolution: {integrity: sha512-YazS6eMC6+Bf4tVvqgJgmg7L3z4hZQ1RgTHw73waNJ/NLiHCsynNhxJXWxMXRdurCbJoyRkQySVbRLzx7PURZw==}
     engines: {node: ^22.11 || ^24 || >=26}
 
   '@changesets/cli@3.0.0-next.8':
@@ -164,8 +164,8 @@ packages:
     resolution: {integrity: sha512-UhQpHeyygd6uhoBZKLpwYNVqqxp6/QChwh9Phbo9BE3pTxu5e2X2JWZhNtlxkxUdWAGEq0sYExmhjDyYhBD1Xw==}
     engines: {node: ^22.11 || ^24 || >=26}
 
-  '@changesets/get-github-info@1.0.0-next.3':
-    resolution: {integrity: sha512-HQXw3Kcz1hAdCQgGH4cWlKpJWcTeL8pWNJP4zDOR3igoHJQO31wzHhG29XPhxnDBK9wEdyI71Ft86KpXDOLv/Q==}
+  '@changesets/get-github-info@1.0.0-next.4':
+    resolution: {integrity: sha512-Bosh+XOoFvLMzAj301tg6phbrEggBtvEccrnceEvYsKSM7PjcIa32Fy22SU5g+501HZywkdwcAlybdWF+e/zzw==}
     engines: {node: ^22.11 || ^24 || >=26}
 
   '@changesets/git@4.0.0-next.6':
@@ -190,6 +190,10 @@ packages:
 
   '@changesets/types@7.0.0-next.6':
     resolution: {integrity: sha512-bdxuVLYKrCt14kNFb+ltta8pOPFmQWB0DpMcz9IWMD+DRupQ4+wZyCkXIkfIoqu3iN0fcQkSuoZ2tNOfV+fepg==}
+    engines: {node: ^22.11 || ^24 || >=26}
+
+  '@changesets/types@7.0.0-next.8':
+    resolution: {integrity: sha512-OLo8iYUapRK92AXRW2vCxN0YtkB8B+E5viuxnVLZAlm3fcmQIpMXic0Yloha5Q0v4p1iw4vXWOYIeBj3HQ8vbg==}
     engines: {node: ^22.11 || ^24 || >=26}
 
   '@changesets/write@1.0.0-next.6':
@@ -1472,10 +1476,10 @@ snapshots:
     dependencies:
       '@changesets/types': 7.0.0-next.6
 
-  '@changesets/changelog-github@1.0.0-next.6':
+  '@changesets/changelog-github@1.0.0-next.8':
     dependencies:
-      '@changesets/get-github-info': 1.0.0-next.3
-      '@changesets/types': 7.0.0-next.6
+      '@changesets/get-github-info': 1.0.0-next.4
+      '@changesets/types': 7.0.0-next.8
 
   '@changesets/cli@3.0.0-next.8':
     dependencies:
@@ -1519,7 +1523,7 @@ snapshots:
       '@changesets/types': 7.0.0-next.6
       semver: 7.8.5
 
-  '@changesets/get-github-info@1.0.0-next.3':
+  '@changesets/get-github-info@1.0.0-next.4':
     dependencies:
       dataloader: 2.2.3
 
@@ -1533,7 +1537,7 @@ snapshots:
 
   '@changesets/parse@1.0.0-next.7':
     dependencies:
-      '@changesets/types': 7.0.0-next.6
+      '@changesets/types': 7.0.0-next.8
       yaml: 2.9.0
 
   '@changesets/pre@3.0.0-next.6':
@@ -1553,6 +1557,8 @@ snapshots:
       '@changesets/types': 7.0.0-next.6
 
   '@changesets/types@7.0.0-next.6': {}
+
+  '@changesets/types@7.0.0-next.8': {}
 
   '@changesets/write@1.0.0-next.6':
     dependencies:
