@@ -26,7 +26,7 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "package-manager-detector": "^1.7.0",
+    "package-manager-detector": "^1.8.0",
     "tinyexec": "^1.2.4"
   },
   "devDependencies": {
