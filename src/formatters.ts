@@ -65,7 +65,7 @@ const prettier: Formatter = {
 const biome: Formatter = {
   name: "biome",
   packageName: "@biomejs/biome",
-  // https://biomejs.dev/guides/configure-biome/
+  // https://biomejs.dev/guides/configure-biome/#configuration-file-resolution
   configFiles: ["biome.json", "biome.jsonc", ".biome.json", ".biome.jsonc"],
   async format(files, ctx) {
     const pm = await ctx.getPackageManager();
@@ -77,7 +77,7 @@ const oxfmt: Formatter = {
   name: "oxfmt",
   packageName: "oxfmt",
   // https://oxc.rs/docs/guide/usage/formatter/config.html
-  configFiles: [".oxfmtrc.json", ".oxfmtrc.jsonc", "oxfmt.config.ts"],
+  configFiles: [".oxfmtrc.json", ".oxfmtrc.jsonc", "oxfmt.config.ts", "oxfmt.config.mts"],
   async format(files, ctx) {
     const pm = await ctx.getPackageManager();
     await packageManagerExecute(pm, ["oxfmt", "--write", ...files], ctx.cwd);
@@ -96,7 +96,7 @@ const deno: Formatter = {
 const dprint: Formatter = {
   name: "dprint",
   packageName: "dprint",
-  // https://dprint.dev/configuration/
+  // https://dprint.dev/setup/#manual-setup
   configFiles: ["dprint.json", "dprint.jsonc", ".dprint.json", ".dprint.jsonc"],
   async format(files, ctx) {
     // NOTE: dprint could be installed in many ways globally, but for all the tools here, we assume
