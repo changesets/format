@@ -42,6 +42,10 @@ Options can be passed to the second parameter:
 - `stopDir`: The path to stop traversing up the directory.
 - `packageManager`: The package manager to use for executing the formatter's command. If not specified, it will use `package-manager-detector` to detect the package manager.
 
+## Thanks
+
+The core idea of this package is based on [formatly](https://github.com/JoshuaKGoldberg/formatly), but implemented for Changesets' needs. However, it is still generic enough to be used by other projects than Changesets.
+
 ## License
 
 MIT
