@@ -23,7 +23,6 @@
     "format": "oxfmt",
     "lint": "oxfmt --check",
     "typecheck": "tsc",
-    "version-packages": "changeset version",
     "release": "changeset publish"
   },
   "dependencies": {

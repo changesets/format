@@ -61,7 +61,6 @@ jobs:
         uses: changesets/action/version@22ccf9aa43179fe9e27dc62e575971d28cce197c # v2.0.0
         with:
           github-token: ${{ steps.app-token.outputs.token }}
-          script: pnpm version-packages
 
   pack:
     name: Pack
