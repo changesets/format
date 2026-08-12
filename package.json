@@ -23,6 +23,7 @@
     "format": "oxfmt",
     "lint": "oxfmt --check",
     "typecheck": "tsc",
+    "version-packages": "changeset version",
     "release": "changeset publish"
   },
   "dependencies": {
@@ -30,8 +31,8 @@
     "tinyexec": "^1.2.4"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^1.0.0-next.6",
-    "@changesets/cli": "^3.0.0-next.8",
+    "@changesets/changelog-github": "^1.0.0",
+    "@changesets/cli": "^3.0.0",
     "@types/node": "^26.1.1",
     "fs-fixture": "^2.14.0",
     "oxfmt": "^0.59.0",
