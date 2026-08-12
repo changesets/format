@@ -22,16 +22,15 @@
     "test": "vitest",
     "format": "oxfmt",
     "lint": "oxfmt --check",
-    "typecheck": "tsc",
-    "release": "changeset publish"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "package-manager-detector": "^1.7.0",
     "tinyexec": "^1.2.4"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^1.0.0-next.6",
-    "@changesets/cli": "^3.0.0-next.8",
+    "@changesets/changelog-github": "^1.0.0",
+    "@changesets/cli": "^3.0.0",
     "@types/node": "^26.1.1",
     "fs-fixture": "^2.14.0",
     "oxfmt": "^0.59.0",

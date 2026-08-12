@@ -14,6 +14,11 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Check out repo
+      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      with:
+        persist-credentials: false
+
     - name: Set up pnpm
       uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6.0.6
 
