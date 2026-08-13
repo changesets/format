@@ -29,7 +29,8 @@ export interface FormatOptions {
 
 /**
  * Format the given patterns with a specified or auto-detected formatter. It returns `true` if a
- * formatter is found and the formatting process passes, otherwise returns `false`.
+ * formatter is found and the formatting process passes (even if the patterns didn't match any
+ * files), otherwise returns `false`.
  */
 export async function format(patterns: string[], options: FormatOptions = {}): Promise<boolean> {
   const formatterName =

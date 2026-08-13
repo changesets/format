@@ -58,7 +58,11 @@ const prettier: Formatter = {
   ],
   async format(files, ctx) {
     const pm = await ctx.getPackageManager();
-    await packageManagerExecute(pm, ["prettier", "--write", ...files], ctx.cwd);
+    await packageManagerExecute(
+      pm,
+      ["prettier", "--write", "--no-error-on-unmatched-pattern", ...files],
+      ctx.cwd,
+    );
   },
 };
 
@@ -69,7 +73,11 @@ const biome: Formatter = {
   configFiles: ["biome.json", "biome.jsonc", ".biome.json", ".biome.jsonc"],
   async format(files, ctx) {
     const pm = await ctx.getPackageManager();
-    await packageManagerExecute(pm, ["@biomejs/biome", "format", "--write", ...files], ctx.cwd);
+    await packageManagerExecute(
+      pm,
+      ["@biomejs/biome", "format", "--write", "--no-errors-on-unmatched", ...files],
+      ctx.cwd,
+    );
   },
 };
 
@@ -80,7 +88,11 @@ const oxfmt: Formatter = {
   configFiles: [".oxfmtrc.json", ".oxfmtrc.jsonc", "oxfmt.config.ts", "oxfmt.config.mts"],
   async format(files, ctx) {
     const pm = await ctx.getPackageManager();
-    await packageManagerExecute(pm, ["oxfmt", "--write", ...files], ctx.cwd);
+    await packageManagerExecute(
+      pm,
+      ["oxfmt", "--write", "--no-error-on-unmatched-pattern", ...files],
+      ctx.cwd,
+    );
   },
 };
 
@@ -89,7 +101,7 @@ const deno: Formatter = {
   // https://docs.deno.com/runtime/reference/cli/fmt/#configuring-the-formatter
   configFiles: ["deno.json", "deno.jsonc", { file: "deno.json", key: "fmt" }],
   async format(files, ctx) {
-    await spawnProcess("deno", ["fmt", ...files], ctx.cwd);
+    await spawnProcess("deno", ["fmt", "--permit-no-files", ...files], ctx.cwd);
   },
 };
 
@@ -102,7 +114,7 @@ const dprint: Formatter = {
     // NOTE: dprint could be installed in many ways globally, but for all the tools here, we assume
     // that they're installed locally in node_modules for now.
     const pm = await ctx.getPackageManager();
-    await packageManagerExecute(pm, ["dprint", "fmt", ...files], ctx.cwd);
+    await packageManagerExecute(pm, ["dprint", "fmt", "--allow-no-files", ...files], ctx.cwd);
   },
 };
 

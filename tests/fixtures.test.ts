@@ -13,16 +13,6 @@ function canRunDeno() {
   });
 }
 
-// dprint requires an internet connection to download plugins (on the first run)
-async function canRunDprint() {
-  try {
-    await dns.lookup("plugins.dprint.dev");
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 const cases: FormatterName[] = ["biome", "deno", "dprint", "oxfmt", "prettier"];
 
 test.for(cases)("detect and format %s fixture", { timeout: 10000 }, async (name, ctx) => {
@@ -31,9 +21,6 @@ test.for(cases)("detect and format %s fixture", { timeout: 10000 }, async (name,
   if (!process.env.CI) {
     if (name === "deno" && !(await canRunDeno())) {
       ctx.skip("deno is not installed");
-    }
-    if (name === "dprint" && !(await canRunDprint())) {
-      ctx.skip("no internet connection for dprint plugin download");
     }
   }
 
@@ -47,4 +34,8 @@ test.for(cases)("detect and format %s fixture", { timeout: 10000 }, async (name,
   const formatResult = await format(["file.ts"], { cwd: fixture.path, formatter: name });
   expect(formatResult).toBe(true);
   expect(await fixture.readFile("file.ts", "utf-8")).toMatchSnapshot();
+
+  // Formatting a missing file should be fine
+  const formatMissingResult = await format(["missing.ts"], { cwd: fixture.path, formatter: name });
+  expect(formatMissingResult).toBe(true);
 });
