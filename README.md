@@ -25,7 +25,7 @@ Options can be passed to the first parameter:
 
 ### `format()`
 
-Format the given patterns with a specified or auto-detected formatter. It returns `true` if a formatter is found and the formatting process passes, otherwise returns `false`.
+Format the given patterns with a specified or auto-detected formatter. It returns `true` if a formatter is found and the formatting process passes (even if the patterns didn't match any files), otherwise returns `false`.
 
 <!-- NOTE: Docs should match src/format.ts -->
 

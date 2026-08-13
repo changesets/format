@@ -9,14 +9,33 @@ const mocks = vi.hoisted(() => ({
 vi.mock(import("tinyexec"), () => ({ exec: mocks.exec }));
 
 const cases: { formatter: FormatterName; expectedCommand: string[] }[] = [
-  { formatter: "prettier", expectedCommand: ["npx", "prettier", "--write", "file.ts"] },
+  {
+    formatter: "prettier",
+    expectedCommand: ["npx", "prettier", "--write", "--no-error-on-unmatched-pattern", "file.ts"],
+  },
   {
     formatter: "biome",
-    expectedCommand: ["npx", "@biomejs/biome", "format", "--write", "file.ts"],
+    expectedCommand: [
+      "npx",
+      "@biomejs/biome",
+      "format",
+      "--write",
+      "--no-errors-on-unmatched",
+      "file.ts",
+    ],
   },
-  { formatter: "oxfmt", expectedCommand: ["npx", "oxfmt", "--write", "file.ts"] },
-  { formatter: "deno", expectedCommand: ["deno", "fmt", "file.ts"] },
-  { formatter: "dprint", expectedCommand: ["npx", "dprint", "fmt", "file.ts"] },
+  {
+    formatter: "oxfmt",
+    expectedCommand: ["npx", "oxfmt", "--write", "--no-error-on-unmatched-pattern", "file.ts"],
+  },
+  {
+    formatter: "deno",
+    expectedCommand: ["deno", "fmt", "--permit-no-files", "file.ts"],
+  },
+  {
+    formatter: "dprint",
+    expectedCommand: ["npx", "dprint", "fmt", "--allow-no-files", "file.ts"],
+  },
 ];
 
 test.for(cases)("executes the correct command for $formatter", async (c) => {
