@@ -4,6 +4,6 @@
   "private": true,
   "devDependencies": {
     "@dprint/typescript": "^0.96.1",
-    "dprint": "^0.55.2"
+    "dprint": "^0.56.1"
   }
 }
