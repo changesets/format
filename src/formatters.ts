@@ -99,7 +99,7 @@ const oxfmt: Formatter = {
 const deno: Formatter = {
   name: "deno",
   // https://docs.deno.com/runtime/reference/cli/fmt/#configuring-the-formatter
-  configFiles: ["deno.json", "deno.jsonc", { file: "deno.json", key: "fmt" }],
+  configFiles: ["deno.json", "deno.jsonc"],
   async format(files, ctx) {
     await spawnProcess("deno", ["fmt", "--permit-no-files", ...files], ctx.cwd);
   },
