@@ -3,6 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.9"
   }
 }
