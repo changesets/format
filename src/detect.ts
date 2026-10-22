@@ -25,7 +25,7 @@ export interface DetectOptions {
    * The order of formatters to check for.
    * @default ["dprint", "deno", "oxfmt", "biome", "prettier"] // from `defaultDetectOrder`
    */
-  order?: FormatterName[];
+  order?: readonly FormatterName[];
 }
 
 /**
