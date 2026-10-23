@@ -59,15 +59,18 @@ jobs:
         run: pnpm typecheck
 
   test:
-    name: "Test on ${{ matrix.os }}"
+    name: "Test using Node ${{ matrix.node_version }} on ${{ matrix.os }}"
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
       matrix:
+        node_version: [22, 24, 26]
         os: [ubuntu-latest, windows-latest]
       fail-fast: false
     steps:
       - uses: $/.github/actions/ci-setup
+        with:
+          node-version: ${{ matrix.node_version }}
 
       - name: Set up Deno
         uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
