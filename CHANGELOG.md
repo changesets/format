@@ -1,5 +1,11 @@
 # @changesets/format
 
+## 0.1.3
+
+### Patch Changes
+
+- [#51](https://github.com/changesets/format/pull/51) [`e3a963c`](https://github.com/changesets/format/commit/e3a963c5b4f41ff8a6de410b84160bf0c98e2236) Thanks [@Andarist](https://github.com/Andarist)! - Accept readonly arrays in the `order` option of `detect`.
+
 ## 0.1.2
 
 ### Patch Changes
