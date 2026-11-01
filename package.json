@@ -31,12 +31,12 @@
   "devDependencies": {
     "@changesets/changelog-github": "^1.0.1",
     "@changesets/cli": "^3.0.3",
-    "@types/node": "^26.6.2",
+    "@types/node": "^26.6.5",
     "fs-fixture": "^2.16.0",
-    "oxfmt": "^0.70.0",
-    "tsdown": "^0.23.0",
+    "oxfmt": "^0.74.0",
+    "tsdown": "^0.23.2",
     "typescript": "~7.0.2",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.5"
   },
   "engines": {
     "node": "^22.11 || ^24 || >=26"
